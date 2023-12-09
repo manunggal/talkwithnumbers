@@ -14,7 +14,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>TALK</strong> <span>with Numbers</span></a>
+						<a href="{% url 'home' %}" class="logo"><strong>TALK</strong> <span>with Numbers</span></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -32,11 +32,11 @@
 									<header class="major">
 										<h1>Hydrogen's Role in a Sustainable Future</h1>
 									</header>
-									<p>TL;DR: Climate change demands a shift to clean energy, with hydrogen playing a key role, especially in industrial sectors.
+									<i>TL;DR: Climate change demands a shift to clean energy, with hydrogen playing a key role, especially in industrial sectors.
 										<a href="{% url 'h2_production' %}">
 											Explore these dynamics with our interactive Hydrogen Production Dashboard.
 										</a>	
-									</p>
+									</i>
 									<span class="image main">{% include 'includes/global_H2_prod_vs_demand_2021.html' %}</span>
 	<!-- blog content -->
 						
@@ -48,11 +48,23 @@
 			However, it's essential to approach this transition thoughtfully, recognizing the diverse viewpoints and concerns that exist.</p>
 	
 	<h5>The Scale of Hydrogen Production and Its Impacts</h5>
-		<p>In 2021, our world produced an enormous 94 million tonnes of hydrogen. Surprisingly, about 95% of this was derived from fossil fuels. 
-			Notably, approximately 40% of this hydrogen is used in oil refineries - industries directly linked to the fossil fuel economy we aim to transition away from. 
-			To avoid catastrophic climate change, a significant shift in this sector is crucial.
-			Even if we eliminate the portion of hydrogen used in oil refining, a staggering 56-60 million tonnes per year would still be needed for various industries. 
-			This number assumes no growth in hydrogen demand, which might not be the case as industries evolve.</p>
+		<p>Before diving into the numbers, let's consider the accompanying chart illustrating the production versus demand of hydrogen in 2021.
+			The chart, based on data from 
+			<a href="https://www.irena.org/Energy-Transition/Technology/Hydrogen" target="_blank">IRENA</a> and 
+			<a href="https://www.iea.org/data-and-statistics/charts/global-and-g7-members-hydrogen-demand-by-sector-2021" target="_blank">IEA</a>, 
+			
+
+			It's important to note a discrepancy: IEA data indicates a total hydrogen production of 94 million tonnes, while IRENA's figure is higher at 120 million tonnes.
+			This difference highlights the challenges in accurately capturing global energy data. 
+			Despite this, the overall picture remains clear: 
+			a substantial portion of hydrogen production, almost 95%, relies on fossil fuels, 
+			with natural gas accounting for 47%, coal 27%, oil 22%, and only 4% from electrolysis. 
+			On the demand side, about 40% of this hydrogen, or 39.82 million tonnes, is used in oil refineries 
+			- industries directly linked to the fossil fuel economy we aim to transition away from.
+			In order to avoid catastrophic climate change, a significant shift in this sector is crucial.
+			The rest of the demand is distributed across chemicals 48.40 million tonnes, iron and steel 5.16 million tonnes, with other industries and sectors making up the rest.
+			Even if we eliminate the portion of hydrogen used in oil refining, a staggering 60-90 millions tonnes per year would still be needed for various industries. 
+			This estimate assumes no growth in hydrogen demand, which might not be the case as industries evolve and the economy grows.</p>
 
 	<h5>Green Hydrogen: A Path to Decarbonization & The Clean Hydrogen Ladder Concept</h5>
 		<p>Assuming we can produce sufficient affordable green hydrogen through electrolysis, the focus should shift to decarbonizing hydrogen feedstocks for diverse industries.
@@ -80,7 +92,7 @@
 	</p>
 
 	<H4>
-		<a href="{% url 'h2_production' %}">
+		<a href="{% url 'h2_production' %}" class="button small">
 			Access the Hydrogen Production Dashboard here
 		</a>
 	</H4>
