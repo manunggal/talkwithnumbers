@@ -21,5 +21,6 @@ from hydrogen.views import home
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', home, name='home'),
-    path('hydrogen/', include('hydrogen.urls')),  # Include the app's URLs
+    path('hydrogen/', include('hydrogen.urls')),
+    path('windenergy/', include('windenergy.urls')),  # Include the app's URLs
 ]
