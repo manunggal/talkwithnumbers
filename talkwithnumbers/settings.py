@@ -25,10 +25,20 @@ SECRET_KEY = "django-insecure-cta$%r6#&4zpqheg@(0w)51!32uwd7$gdihk^i+i9n-)ml&_3%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.talkwithnumbers.com']
+# access to the website
+ALLOWED_HOSTS = ['.talkwithnumbers.com',
+                 'talkwithnumbers-65ee58abeb91.herokuapp.com']
+
+# CSRF setting cross site request forgery
 CSRF_TRUSTED_ORIGINS = ['https://*.herokuapp.com', 'https://*.talkwithnumbers.com']
 
-
+# CORS setting cross origin resource sharing
+CORS_ALLOWED_ORIGINS = [
+    "https://talkwithnumbers.com",
+    "https://www.talkwithnumbers.com",
+    "https://talkwithnumbers-65ee58abeb91.herokuapp.com",
+    # Add any other domains you want to whitelist
+]
 
 # Application definition
 
@@ -126,10 +136,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# CORS setting cross origin resource sharing
-CORS_ALLOWED_ORIGINS = [
-    "https://talkwithnumbers.com",
-    "https://www.talkwithnumbers.com",
-    "https://talkwithnumbers-65ee58abeb91.herokuapp.com",
-    # Add any other domains you want to whitelist
-]
+
