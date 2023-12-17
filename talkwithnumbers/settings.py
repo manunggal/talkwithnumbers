@@ -26,6 +26,7 @@ SECRET_KEY = "django-insecure-cta$%r6#&4zpqheg@(0w)51!32uwd7$gdihk^i+i9n-)ml&_3%
 DEBUG = True
 
 ALLOWED_HOSTS = ['.talkwithnumbers.com']
+CSRF_TRUSTED_ORIGINS = ['https://*.talkwithnumbers.com']
 
 
 

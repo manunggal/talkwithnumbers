@@ -162,7 +162,7 @@
                 <!-- <img src="icons/battery-charging.svg" alt="Battery Charging Icon" /> -->
                 <!-- <ion-icon name="battery-charging-outline"></ion-icon> -->
               </div>
-              <a href="https://ourworldindata.org/electricity-mix" class="small-box-footer">
+              <a href="https://ourworldindata.org/electricity-mix"  target="_blank" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
@@ -178,7 +178,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="https://www.irena.org/Energy-Transition/Technology/Hydrogen" class="small-box-footer">
+              <a href="https://www.irena.org/Energy-Transition/Technology/Hydrogen"  target="_blank" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
@@ -193,7 +193,7 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="https://hydrogeneurope.eu/itm-power-unveils-poseidon-20mw-electrolyser-module/" class="small-box-footer">
+              <a href="https://hydrogeneurope.eu/itm-power-unveils-poseidon-20mw-electrolyser-module/"  target="_blank" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
@@ -208,7 +208,7 @@
               <div class="icon">
                 <i class="fa-solid fa-industry"></i>
               </div>
-              <a href="https://ourworldindata.org/emissions-by-sector" class="small-box-footer">
+              <a href="https://ourworldindata.org/emissions-by-sector"  target="_blank" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
@@ -536,7 +536,7 @@
         // AJAX call
         $.ajax({
           type: "POST",
-          url: "https://talkwithnumbers-65ee58abeb91.herokuapp.com/hydrogen/h2-production/",
+          url: "https://talkwithnumbers/hydrogen/h2-production/",
           data: {
             'csrfmiddlewaretoken': "{{ csrf_token }}",
             'hiddenH2Production': hiddenH2Production,
