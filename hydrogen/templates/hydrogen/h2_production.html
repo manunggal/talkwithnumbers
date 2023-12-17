@@ -538,7 +538,7 @@
           type: "POST",
           url: "https://talkwithnumbers-65ee58abeb91.herokuapp.com/hydrogen/h2-production/",
           data: {
-            'csrfmiddlewaretoken': getCsrfToken('csrftoken'),
+            'csrfmiddlewaretoken':"{{ csrf_token }}",
             'hiddenH2Production': hiddenH2Production,
             'hiddenElectrolyzerEff': hiddenElectrolyzerEff,
             'hiddenRenewablePct': hiddenRenewablePct,
