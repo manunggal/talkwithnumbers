@@ -49,15 +49,15 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="{% url 'home' %}" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+      <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
-      </li>
+      </li> -->
     </ul>
 
     <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
+    <!-- <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -66,7 +66,7 @@
           </button>
         </div>
       </div>
-    </form>
+    </form> -->
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -82,7 +82,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="{% url 'hydrogen' %}" class="brand-link">
       <img src="{% static 'assets/dist/img/H2appLogo.jpg' %}" alt="H2App Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Hydrogen</span>
@@ -113,10 +113,10 @@
             <button type="submit" id="resetButton" class="btn btn-primary">Reset</button>
           </form>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <!-- <a href="pages/widgets.html" class="nav-link">
               <i class="fa-solid fa-book"></i>
               <p>References </p>
-            </a>
+            </a> -->
           </li>
         </ul>
       </nav>
@@ -135,10 +135,10 @@
             <h1 class="m-0 text-dark">Production Dashboard</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
+            <!-- <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
+            </ol> -->
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -162,7 +162,8 @@
                 <!-- <img src="icons/battery-charging.svg" alt="Battery Charging Icon" /> -->
                 <!-- <ion-icon name="battery-charging-outline"></ion-icon> -->
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="https://ourworldindata.org/electricity-mix" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -177,7 +178,8 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="https://www.irena.org/Energy-Transition/Technology/Hydrogen" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -191,7 +193,8 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="https://hydrogeneurope.eu/itm-power-unveils-poseidon-20mw-electrolyser-module/" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -205,7 +208,8 @@
               <div class="icon">
                 <i class="fa-solid fa-industry"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="https://ourworldindata.org/emissions-by-sector" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
