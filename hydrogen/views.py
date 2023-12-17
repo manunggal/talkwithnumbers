@@ -7,12 +7,14 @@ from plotly.offline import plot
 import plotly.graph_objects as go
 from django.http import HttpResponse, JsonResponse
 import json
+from django.views.decorators.csrf import csrf_protect
 
 
 
 def home(request):
     return render(request, 'home.html')
 
+@csrf_protect
 def hydrogen(request):
     return render(request, 'hydrogen/hydrogen.html')
 
