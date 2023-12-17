@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-cta$%r6#&4zpqheg@(0w)51!32uwd7$gdihk^i+i9n-)ml&_3%
 DEBUG = True
 
 ALLOWED_HOSTS = ['.talkwithnumbers.com']
-CSRF_TRUSTED_ORIGINS = ['https://*.talkwithnumbers.com']
+CSRF_TRUSTED_ORIGINS = ['https://*.herokuapp.com', 'https://*.talkwithnumbers.com']
 
 
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "corsheaders",
     "hydrogen",
     "windenergy",
 ]
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -123,3 +125,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# CORS setting cross origin resource sharing
+CORS_ALLOWED_ORIGINS = [
+    "https://talkwithnumbers.com",
+    "https://www.talkwithnumbers.com",
+    "https://talkwithnumbers-65ee58abeb91.herokuapp.com",
+    # Add any other domains you want to whitelist
+]
