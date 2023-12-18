@@ -37,7 +37,6 @@ CORS_ALLOWED_ORIGINS = [
     "https://talkwithnumbers.com",
     "https://www.talkwithnumbers.com",
     "https://talkwithnumbers-65ee58abeb91.herokuapp.com",
-    # Add any other domains you want to whitelist
 ]
 
 # Application definition

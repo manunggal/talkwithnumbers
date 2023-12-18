@@ -8,8 +8,9 @@ import plotly.graph_objects as go
 from django.http import HttpResponse, JsonResponse
 import json
 from django.views.decorators.csrf import csrf_protect
+import logging
 
-
+logger = logging.getLogger(__name__)
 
 def home(request):
     return render(request, 'home.html')
@@ -73,6 +74,7 @@ def h2_production_view(request):
     if request.method == 'POST' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         print("POST request received")
         print("Post Data:", request.POST)
+        logger.info("H2 production endpoint hit with POST request.")
 
         # convert the POST strings data to float
         post_data = request.POST.copy()
