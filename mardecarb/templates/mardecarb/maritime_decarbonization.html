@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<article>
+    <div id="main" class="alt">
+        <section id="one">
+            <div class="inner">
+                <header class="major">
+                    <h1>Maritime Decarbonization</h1>
+                </header>
+                <i>TL;DR: It might be possible to electrify container vessel for Jakarta-Surabaya route.</i>
+                <span class="image">
+                    <img src="{% static 'assets/images/electricvessel.jpg' %}" alt="">
+                </span>
+                
+                <h5>Recent Study on electric shipping</h5>
+                <p>
+                    A team from UC Berkley, US. released 
+                    <a href="https://www.nature.com/articles/s41560-022-01065-y" target="_blank">an article</a> in 
+                    <a href="https://www.nature.com/nenergy/" target="_blank">Nature journal</a> about the feasibility of electrifying container vessels.
+                    According to their finding, at battery price of US$ 100/kWh, the electrification of intraregional trade routes of less than 1.500 km is economical.
+                </p>
+                <div class="input-container">
+                    <label for="teu-size">Container Vessel TEU Size:</label>
+                    <select id="teu-size" name="teu-size">
+                        <option value="500">500 TEUs</option>
+                        <option value="1000">1000 TEUs</option>
+                        <option value="1500">1500 TEUs</option>
+                        <option value="2000">2000 TEUs</option>
+                    </select>
+                </div>
+    
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+</article>
+{% endblock %}

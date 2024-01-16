@@ -1,3 +1,25 @@
 .small-font {
     font-size: smaller !important;
 }
+
+
+/* CSS for .input-container */
+.input-container {
+    background-color: #2a2f4a; /* Background color for the container */
+    border: 1px solid #2a2f4a; /* Border around the container */
+    padding: 20px; /* Padding inside the container */
+    margin-bottom: 20px; /* Margin below the container */
+}
+
+/* CSS for labels within .input-container */
+.input-container label {
+    font-weight: bold; /* Bold label text */
+    display: block; /* Display labels as block elements */
+    margin-bottom: 10px; /* Margin below each label */
+}
+
+/* CSS for limiting the width of the select element */
+.input-container select {
+    width: 40%; /* Set the initial width to 40% */
+    max-width: 50%; /* Set the maximum width to 50% */
+}

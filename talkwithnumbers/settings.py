@@ -27,7 +27,11 @@ DEBUG = True
 
 # access to the website
 ALLOWED_HOSTS = ['.talkwithnumbers.com',
-                 'talkwithnumbers-65ee58abeb91.herokuapp.com']
+                 'talkwithnumbers-65ee58abeb91.herokuapp.com',
+                 'localhost',
+                 '127.0.0.1']
+
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 # CSRF setting cross site request forgery
 CSRF_TRUSTED_ORIGINS = ['https://*.herokuapp.com', 'https://*.talkwithnumbers.com']
@@ -51,6 +55,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "hydrogen",
     "windenergy",
+    "mardecarb"
 ]
 
 MIDDLEWARE = [

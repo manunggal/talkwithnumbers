@@ -16,11 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import RedirectView
 from hydrogen.views import home
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', home, name='home'),
+    path('index.html', RedirectView.as_view(url='/', permanent=True)),
     path('hydrogen/', include('hydrogen.urls')),
-    path('windenergy/', include('windenergy.urls')),  # Include the app's URLs
+    path('windenergy/', include('windenergy.urls')),
+    path('mardecarb/', include('mardecarb.urls')),
+        # Include the app's URLs
 ]
