@@ -15,12 +15,55 @@
                 </span>
                 
                 <h5>Recent Study on electric shipping</h5>
+
                 <p>
-                    A team from UC Berkley, US. released 
-                    <a href="https://www.nature.com/articles/s41560-022-01065-y" target="_blank">an article</a> in 
-                    <a href="https://www.nature.com/nenergy/" target="_blank">Nature journal</a> about the feasibility of electrifying container vessels.
-                    According to their finding, at battery price of US$ 100/kWh, the electrification of intraregional trade routes of less than 1.500 km is economical.
+                    Two recent studies have brought a new perspective on the feasibility of electrifying maritime transportation.                                 
+                    The first study by Kersey et al. (2022) <a href="https://doi.org/10.1038/s41560-022-01065-y" target="_blank">[2]</a>
+                    showed that at battery price of US$ 100kWh, the electrification of intra-regional trade routes of less than 1,500 km is economical
+                    with minimal impact to ship carrying capacity. If battery achieve a price of US$ 50kWh, the economical range nearly doubles.
+
+                    Similiarly a second study by Kistner et al. (2023) <a href="https://doi.org/10.1016/j.ecmx.2023.100507" target="_blank">[1]</a>
+                    mentioned that the application of battery-electric propulsion system is found not to be limited by the vessel Size
+                    but mostly by the operated passage length. While distance of up to 15,000 km are technically achievable,
+                    economic limitations are effectively reducing the area of application to a maximum of 10,000 km.
+                    However when comparing battery solutions with conventional desel combustion engines, 
+                    economic competitiveness is only observed for passages of up to 2,500 km 
+                    when including a carbon tax and forecasting optimistic battery development.  
+                                  
                 </p>
+
+
+
+                <p>
+                    In Indonesia, a nation where maritime routes are the lifeline of our archipelago, make this finding very interesting.
+                    What if we could electrify our maritime transportation? How feasible is it and What is the limitation?
+                    Considering that the trajectory of falling battery price in the last decade, in the near future this could be the key to decarbonize our maritime transportation.
+                      
+                    <span style="display: block; margin: 20px;">
+                        <img src="{% static 'assets/images/bloombergnef-average-lithium-cell-price-2021.jpg' %}" alt="">
+                    </span>
+
+
+                    Borrowing the approach from the references, this blog tries to estimate the feasibility of electrifying the Jakarta-Surabaya route for a study case, 
+                    specifically for container ships.                    
+                    The following graph represents the data we have to work with. It's not comprehensive, but it's a starting point for understanding the potential of 
+                    battery-electric vessels in Indonesia.
+                    
+
+                    <span class="image main" style="display: block; padding-bottom: 20px;">
+                        {% include 'includes/jkt_sub_vessels.html' %}</span>
+                    
+                    <br>
+                    <br>
+                    This route is choosen because the ports in Jakarta and Surabaya are the busiest ports in Indonesia, and the route distance also within the range mentioned on both references above. It is around 742 km.
+                    
+                    For this analysis, we will use the following assumptions:
+                    <ul>
+                        <li>Container vessel TEU size: 500 TEUs</li>
+                        <li>Container vessel speed: 15 knots</li>
+                        <li>Container vessel fuel consumption: 0.2 kg/kWh</
+                </p>
+
                 <div class="input-container">
                     <label for="teu-size">Container Vessel TEU Size:</label>
                     <select id="teu-size" name="teu-size">
@@ -30,6 +73,31 @@
                         <option value="2000">2000 TEUs</option>
                     </select>
                 </div>
+
+                <h2>References:</h2>
+                <ol>
+                    <li class="apa-citation">
+                        
+                        Kistner, L., Bensmann, A., & Hanke-Rauschenbach, R. (2023). 
+                        Potentials and limitations of battery-electric container ship propulsion systems. 
+                        <span class="italicized">Energy Conversion and Management: X</span>, 21, 100507. 
+                        <a href="https://doi.org/10.1016/j.ecmx.2023.100507" target="_blank">https://doi.org/10.1016/j.ecmx.2023.100507</a>
+                    </li>
+                    <li class="apa-citation">
+                        
+                        Kersey, J., Popovich, N. D., & Phadke, A. A. (2022). 
+                        Rapid battery cost declines accelerate the prospects of all-electric interregional container shipping. 
+                        <span class="italicized">Nature Energy</span>. 
+                        <a href="https://doi.org/10.1038/s41560-022-01065-y" target="_blank">https://doi.org/10.1038/s41560-022-01065-y</a>
+                    </li>
+                    <li class="apa-citation">
+                        
+                        Li, J., & Jia, Y. (2020). 
+                        Calculation Method of Marine Ship Fuel Consumption. 
+                        <span class="italicized">IOP Conference Series: Earth and Environmental Science</span>, 571, 012078. 
+                        <a href="https://doi.org/10.1088/1755-1315/571/1/012078" target="_blank">https://doi.org/10.1088/1755-1315/571/1/012078</a>
+                    </li>
+                </ol>
     
             </div>
         </section>

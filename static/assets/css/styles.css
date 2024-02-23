@@ -23,3 +23,33 @@
     width: 40%; /* Set the initial width to 40% */
     max-width: 50%; /* Set the maximum width to 50% */
 }
+
+
+/* For styling the reference, using APA citation style */
+/* APA citation style */
+.apa-citation {
+    text-indent: -0.5in;
+    margin-left: 0.5in;
+    font-size: 20px; /* Increased font size */
+    line-height: 1.5;
+}
+
+/* Style for italicized text in APA citation */
+.italicized {
+    font-style: italic;
+}
+
+/* Ensure ordered list numbers are visible */
+ol {
+    list-style-position: inside;
+    padding-left:20px; /* or sufficient value */
+    text-indent:0px; /* Adjust text indent if necessary */
+}
+
+
+.img-container {
+    display: block; /* Change span to a block-level element */
+    margin: 20px; /* Add space around the span */
+}
+
+  
