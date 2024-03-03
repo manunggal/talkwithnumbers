@@ -1,0 +1,283 @@
+<html>
+
+<!-- template for new block -->
+{% if table_x_only %}
+{% block table_x %}
+
+{% endblock %}
+{% endif %}
+
+<!-- Port distance table -->
+{% if table_port_distance_only %}
+{% block table_port_distance %}
+<table class="table-spacing" border="1">
+    <tr>
+      <th>Port Depart</th>
+      <th>Port Arrive</th>
+      <th>Distance (Nautical Miles)</th>
+    </tr>
+    <tr>
+      <td>Tj Perak</td>
+      <td>Tidore</td>
+      <td>1216</td>
+    </tr>
+    <tr>
+      <td>Tidore</td>
+      <td>Morotai</td>
+      <td>156</td>
+    </tr>
+    <tr>
+      <td>Morotai</td>
+      <td>Galela</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Galela</td>
+      <td>Maba</td>
+      <td>144</td>
+    </tr>
+    <tr>
+      <td>Maba</td>
+      <td>Weda</td>
+      <td>139</td>
+    </tr>
+    <tr>
+      <td>Weda</td>
+      <td>Tj Perak</td>
+      <td>1213</td>
+    </tr>
+  </table>
+{% endblock %}
+{% endif %}
+
+<!-- subject resume table -->
+{% if table_subject_resume_only %}
+{% block table_subject_resume %}
+<table border="1">
+  <tr>
+    <th>Variables</th>
+    <th>Values</th>
+    <th>Unit</th>
+  </tr>
+  <tr>
+    <td>Vessel</td>
+    <td>KM Logistik Nusantara 5</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td>Longest Intra-Port Distance</td>
+    <td>1216</td>
+    <td>nautical miles</td>
+  </tr>
+  <tr>
+    <td>Speed</td>
+    <td>16</td>
+    <td>knots</td>
+  </tr>
+  <tr>
+    <td>Required Engine Power</td>
+    <td>6000</td>
+    <td>kW</td>
+  </tr>
+  <tr>
+    <td>Total Fuel Tank Capacity</td>
+    <td>1090</td>
+    <td>m³</td>
+  </tr>
+  <tr>
+    <td>SFOC for Diesel engine</td>
+    <td>23</td>
+    <td>ton per day</td>
+  </tr>
+  <tr>
+    <td>Interest rate</td>
+    <td>4%</td>
+    <td>percent</td>
+  </tr>
+  <tr>
+    <td>Lifetime</td>
+    <td>25</td>
+    <td>years</td>
+  </tr>
+</table>
+{% endblock %}
+{% endif %}
+
+<!-- other assumption table -->
+{% if table_assumptions_only %}
+{% block table_assumptions %}
+<table class="table-spacing" border="1">
+  <tr>
+    <th>Variables</th>
+    <th>Values</th>
+    <th>Sources</th>
+  </tr>
+  <tr>
+    <td>Interest Rate</td>
+    <td>4 %</td>
+    <td>Own estimate</td>
+  </tr>
+  <tr>
+    <td>Lifetime</td>
+    <td>25 years</td>
+    <td><a href="https://doi.org/10.1016/j.ecmx.2023.100507" target="_blank">Kistner et al.[1]</a></td>
+  </tr>
+  <tr>
+    <td>Power specific investment cost for marine diesel engine</td>
+    <td>251.2 EUR/kW</td>
+    <td><a href="https://doi.org/10.1016/j.ecmx.2023.100507" target="_blank">Kistner et al.[1]</a></td>
+  </tr>
+  <tr>
+    <td>Energy specific investment cost for battery-electric motor</td>
+    <td>460 EUR/kWh</td>
+    <td><a href="https://doi.org/10.1016/j.ecmx.2023.100507" target="_blank">Kistner et al.[1]</a></td>
+  </tr>
+  <tr>
+    <td>Cell specific battery energy capacity</td>
+    <td>733 Wh</td>
+    <td><a href="https://doi.org/10.1016/j.ecmx.2023.100507" target="_blank">Kistner et al.[1]</a></td>
+  </tr>
+  <tr>
+    <td>Annual maintenance cost factor for marine diesel engine</td>
+    <td>0.0045</td>
+    <td><a href="https://doi.org/10.1016/j.ecmx.2023.100507" target="_blank">Kistner et al.[1]</a></td>
+  </tr>
+  <tr>
+    <td>Battery charging price</td>
+    <td>996.74 IDR/kWh</td>
+    <td><a href="https://web.pln.co.id/pelanggan/tarif-tenaga-listrik" target="_blank">PLN</a></td>
+  </tr>
+  <tr>
+    <td>Marine fuel oil price</td>
+    <td>18,950 IDR/Liter</td>
+    <td><a href="https://solarindustri.com/berita/harga-solar-industri-01-14-januari-2024/" target="_blank">
+      Solar industri</a></td>
+  </tr>
+</table>
+
+
+
+{% endblock %}
+{% endif %}
+
+<!-- economic model for diesel engine -->
+{% if ice_eco_model_only %}
+{% block ice_eco_model %}
+<div>
+  \( p_{ICE}^{a} = p_{ICE}^{\text{inv}} \cdot (p_{ICE}^{r})^{1.1} \cdot (A_{ICE} + c_{ICE}^{a}) \)
+  <!-- Ensure you have MathJax or a similar library to render this equation -->
+</div>
+{% endblock %}
+{% endif %}
+
+<!-- table for economic model for diesel engine -->
+{% if ice_eco_table_only %}
+{% block ice_eco_table %}
+<table border="1" style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th>Symbol</th>
+    <th>Description</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>\( p_{ICE}^{a} \)</td>
+    <td>Annual costs for the ICE</td>
+    <td>To be calculated</td>
+  </tr>
+  <tr>
+    <td>\( p_{ICE}^{\text{inv}} \)</td>
+    <td>Power-specific investment costs (€/kW)</td>
+    <td>251.2</td>
+  </tr>
+  <tr>
+    <td>\( p_{ICE}^{r} \)</td>
+    <td>Rated Power for ICE (kW)</td>
+    <td>6000</td>
+  </tr>
+  <tr>
+    <td>\( A_{ICE} \)</td>
+    <td>Annuity payment factor</td>
+    <td>0.064</td>
+  </tr>
+  <tr>
+    <td>\( c_{ICE}^{a} \)</td>
+    <td>Annually accruing maintenance costs</td>
+    <td>0.0045</td>
+    </tr>
+  <tr>
+    <td>\( t_{L,ICE} \)</td>
+    <td>ICE's lifetime</td>
+    <td>25</td>
+  </tr>
+</table>
+{% endblock %}
+{% endif %}
+
+<!-- economic model for battery electric vessel -->
+{% if be_eco_model_only %}
+{% block be_eco_model %}
+<div>
+  \( p_{B}^{a} = p_{B}^{\text{inv}} \cdot C_{E,B} \cdot A_{B} (t_{L,B}) \)
+</div>
+{% endblock %}
+{% endif %}
+
+<!-- table for economic model for battery electric vessel -->
+{% if be_eco_table_only %}
+{% block be_eco_table %}
+<table border="1" style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th>Symbol</th>
+    <th>Description</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>\( p_{B}^{a} \)</td>
+    <td>Annual costs for the ICE</td>
+    <td>To be calculated</td>
+  </tr>
+  <tr>
+    <td>\( p_{B}^{\text{inv}} \)</td>
+    <td>Power-specific investment costs (€/kW)</td>
+    <td>460</td>
+  </tr>
+  <tr>
+    <td>\( C_{E,B} \)</td>
+    <td>Battery energy capacity (kWh)</td>
+    <td>622</td>
+  </tr>
+  <tr>
+    <td>\( A_{B} \)</td>
+    <td>Annuity payment factor</td>
+    <td>0.064</td>
+  </tr>
+  <tr>
+    <td>\( t_{L,B} \)</td>
+    <td>Battery electric's lifetime</td>
+    <td>25</td>
+  </tr>
+</table>
+{% endblock %}
+{% endif %}
+
+<!-- physical model comparison table -->
+{% if physical_model_table_only %}
+{% block physical_model_table %}
+<table border="1" style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th>Diesel Engine Propulsion</th>
+    <th>Battery-Electric Propulsion</th>
+  </tr>
+  <tr>
+    <td>Total fuel tank volume is 1090 m³</td>
+    <td>Total battery system volume is 3000 m³</td>
+  </tr>
+  <tr>
+    <td>Maximum fuel weight is 860 metric-ton </td>
+    <td>Total battery system weight is 2958 metric-ton</td>
+  </tr>
+</table>
+{% endblock %}
+{% endif %}
+
+</html>

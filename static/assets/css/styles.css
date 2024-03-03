@@ -1,7 +1,17 @@
+/* css for smalling font */
 .small-font {
     font-size: smaller !important;
 }
 
+/* margin for table-top */
+.table-spacing {
+    margin-top: 20px; /* Adjust the value as needed */
+  }
+
+ /* margin for paragraph */
+.paragraph-spacing {
+margin-bottom: 20px; /* Adjust the value as needed */
+}  
 
 /* CSS for .input-container */
 .input-container {

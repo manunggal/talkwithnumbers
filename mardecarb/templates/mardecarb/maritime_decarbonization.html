@@ -16,6 +16,10 @@
                 
                 <h5>Recent Study on electric shipping</h5>
 
+                
+
+                  
+
                 <p>
                     Two recent studies have brought a new perspective on the feasibility of electrifying maritime transportation.                                 
                     The first study by Kersey et al. (2022) <a href="https://doi.org/10.1038/s41560-022-01065-y" target="_blank">[2]</a>
@@ -44,26 +48,123 @@
                     </span>
 
 
-                    Borrowing the approach from the references, this blog tries to estimate the feasibility of electrifying the Jakarta-Surabaya route for a study case, 
-                    specifically for container ships.                    
-                    The following graph represents the data we have to work with. It's not comprehensive, but it's a starting point for understanding the potential of 
-                    battery-electric vessels in Indonesia.
-                    
+                    Borrowing the approach from the references, this writing tries to estimate the feasibility of electrifying the maritime transportation in Indonesia. 
+                    For this purpose, KM Logistik Nusantara 5 serving the T-10 route from the Indonesia's 'Sea-Toll' program is taken for the study. 
+                    This route is one with the highest volume routes within this program. 
+                    It serves the eastern part of Indonesia, notably the Maluku group of islands. The detail of the route is presented in below table.
+                    <br>
+                    <br>
 
-                    <span class="image main" style="display: block; padding-bottom: 20px;">
-                        {% include 'includes/jkt_sub_vessels.html' %}</span>
+                    <!-- T-10 table -->
+                    {% include 'includes/equation_data.html' with table_port_distance_only=True %}
                     
+                   
                     <br>
-                    <br>
-                    This route is choosen because the ports in Jakarta and Surabaya are the busiest ports in Indonesia, and the route distance also within the range mentioned on both references above. It is around 742 km.
                     
-                    For this analysis, we will use the following assumptions:
-                    <ul>
-                        <li>Container vessel TEU size: 500 TEUs</li>
-                        <li>Container vessel speed: 15 knots</li>
-                        <li>Container vessel fuel consumption: 0.2 kg/kWh</
                 </p>
 
+                <p>
+                    A little bit about the 'Sea-Toll' program, Indonesia is an archipelagic nation with thousands of islands, 
+                    maritime transportation is indispensable to our country's infrastructure. 
+                    In response, the Government of Indonesia launched the “Sea Toll” program in 2015. 
+                    It's an initiative aimed at enhancing maritime logistics and connectivity among the archipelago's islands, 
+                    focusing on reducing logistics costs and equalizing the price of goods across regions, particularly in remote and underdeveloped areas.                  
+                    
+                </p>
+
+                <p>
+                    Following table summarize the subject of the comparison.
+                    <br>
+                    <br>
+                    {% include 'includes/equation_data.html' with table_subject_resume_only=True %}
+                    For the distance calculation, the longest intra-port distance on this route is used to estimate the required energy for the battery-electric vessel.
+                    In this case the voyage between Tanjung Perak to Tidore (1,216 miles). 
+                    The estimated round trip duration, including berthing time at each visited ports, is 21 days.
+                    Therefore, it is possible to consider 17 round trip voyages per year.
+                    It is assumed that for the rest of the trip the vessel can be refueled or recharged on the ports along the route.
+                    As for calculating fuel or recharge cost (operational cost), the entirety of the voyage is taken into account.
+
+                </p>
+
+                <p>
+                    As for the method of comparison, 
+                    the <a href="https://doi.org/10.1016/j.ecmx.2023.100507" target="_blank">[1]</a> reference will be used.
+                    The economic and physical models for both marine diesel engine and battery-electric vessel will be compared.
+                    For the economic model, the equations are as follow:
+
+                    <div style="display: flex; justify-content: space-between;">
+
+                        <!-- Left column for diesel engine vessel -->
+                        <div style="flex: 1; padding-right: 10px;">
+                            <div>Economic model for diesel engine vessel</div>
+                            <br>
+                            <!-- equation -->
+                            <div>
+                                {% include 'includes/equation_data.html' with ice_eco_model_only=True %}
+                            </div>
+                            <br>
+                            <!-- table -->
+                            {% include 'includes/equation_data.html' with ice_eco_table_only=True %}
+                        </div>
+
+                        <!-- right column for battery electric vessel -->
+                        <div style="flex: 1; padding-left: 10px;">
+                            <div>Economic model for battery electric vessel</div>
+                            <br>
+                            <!-- equation -->
+                            <div>
+                                {% include 'includes/equation_data.html' with be_eco_model_only=True %}    
+                            </div>
+                            <br>
+                            <!-- table -->
+                            {% include 'includes/equation_data.html' with be_eco_table_only=True %}
+                        </div>
+
+                    </div>
+
+                </p>
+
+                <p>
+                    The rest of the assumptions can be summarized in the following table.
+                    {% include 'includes/equation_data.html' with table_assumptions_only=True %}
+                    The charging rate and fuel oil price are local data in IDR, it will be converted to EUR during the estimation.
+                    The resulting estimation is presented in below graph
+
+                    <span class="image main" style="display: block; padding-bottom: 20px;">
+                        {% include 'includes/annual_costs.html' %}</span>
+                    
+                    
+                </p>
+                <p>
+                    The recent analysis of propulsion costs for cargo ships presents findings that are in line with prior research, 
+                    particularly highlighting the economic challenges associated with the application of battery-electric propulsion systems for extended maritime routes. 
+                    A case in point is the route from Surabaya to Tidore, covering a journey of approximately three days. 
+                    For this passage, the annualized investment cost of implementing battery-electric propulsion is observed to be about 50 times higher than that of traditional marine diesel engines. 
+                    This stark difference underscores the current limitations of battery-electric systems for longer voyages where cost-effectiveness is a pivotal concern.
+                </p>
+                <p>
+                    Conversely, for shorter routes such as the 72 nautical mile stretch from Morotai to Galela, which is completed in just 4.5 hours, the cost disparity narrows considerably. 
+                    Here, the annualized investment cost for electric propulsion is merely three times that of diesel engines - 
+                    a significantly reduced gap compared to the longer T-10 route from Surabaya to Tidore. 
+                    This observation opens up an intriguing line of inquiry into the viability of electric propulsion for mid-range maritime routes, 
+                    particularly those spanning 300 to 700 nautical miles, where economic and operational efficiency may reach a tipping point.
+                </p>
+                <!-- table -->
+                {% include 'includes/equation_data.html' with physical_model_table_only=True %} 
+                <p>
+                    From a physical modeling perspective, our analysis has honed in on the longest route within our study, 
+                    the 1216 nautical mile trek from Surabaya to Tidore. 
+                    Findings indicate that battery-electric propulsion systems would require approximately threefold the volume and weight compared to conventional systems. 
+                    Such an increase has direct implications on cargo capacity, potentially reducing available space and weight for freight. 
+                    Notably, even if batteries were to occupy the space typically reserved for fuel tanks, an additional 2000 m³ would still be necessary to house the electric system.
+                </p>
+                <p>
+                    It is important to note that these calculations have not accounted for the environmental costs associated with each propulsion system, 
+                    nor the potential for price changes in battery technology. As the maritime industry continues to evolve and more data becomes available, 
+                    particularly regarding environmental impact and battery price trends, it is my intention to provide updated insights through future blog posts.
+                </p>
+
+<!-- 
                 <div class="input-container">
                     <label for="teu-size">Container Vessel TEU Size:</label>
                     <select id="teu-size" name="teu-size">
@@ -72,7 +173,7 @@
                         <option value="1500">1500 TEUs</option>
                         <option value="2000">2000 TEUs</option>
                     </select>
-                </div>
+                </div> -->
 
                 <h2>References:</h2>
                 <ol>
