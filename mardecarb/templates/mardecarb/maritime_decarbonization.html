@@ -7,9 +7,10 @@
         <section id="one">
             <div class="inner">
                 <header class="major">
-                    <h1>Maritime Decarbonization</h1>
+                    <h1>Electrification of Cargo Ship Propulsion</h1>
+                    <h2>Study Case for Indonesia</h2>
                 </header>
-                <i>TL;DR: It might be possible to electrify container vessel for Jakarta-Surabaya route.</i>
+                <i>TL;DR: If it's less than 24 hours voyage, let's have a look now. Otherwise let's wait few more years.</i>
                 <span class="image">
                     <img src="{% static 'assets/images/electricvessel.jpg' %}" alt="">
                 </span>
@@ -19,7 +20,7 @@
                 
 
                   
-
+                <h3>Background</h3>
                 <p>
                     Two recent studies have brought a new perspective on the feasibility of electrifying maritime transportation.                                 
                     The first study by Kersey et al. (2022) <a href="https://doi.org/10.1038/s41560-022-01065-y" target="_blank">[2]</a>
@@ -35,32 +36,39 @@
                     when including a carbon tax and forecasting optimistic battery development.  
                                   
                 </p>
+                <br>
 
-
-
+                <h3>Case for Indonesia</h3>
                 <p>
                     In Indonesia, a nation where maritime routes are the lifeline of our archipelago, make this finding very interesting.
                     What if we could electrify our maritime transportation? How feasible is it and What is the limitation?
                     Considering that the trajectory of falling battery price in the last decade, in the near future this could be the key to decarbonize our maritime transportation.
                       
                     <span style="display: block; margin: 20px;">
-                        <img src="{% static 'assets/images/bloombergnef-average-lithium-cell-price-2021.jpg' %}" alt="">
+                        <img src="{% static 'assets/images/BNEF_battery_price_trajectory_upto_2023.png' %}" alt="">
                     </span>
 
 
-                    Borrowing the approach from the references, this writing tries to estimate the feasibility of electrifying the maritime transportation in Indonesia. 
-                    For this purpose, KM Logistik Nusantara 5 serving the T-10 route from the Indonesia's 'Sea-Toll' program is taken for the study. 
+                    Borrowing the approach from Kistner et al. (2023) <a href="https://doi.org/10.1016/j.ecmx.2023.100507" target="_blank">[1]</a>, 
+                    this writing tries to estimate the feasibility of electrifying the maritime transportation in Indonesia. 
+                    Economic and physical models are used for the evaluation.
+                    For this purpose, KM Logistik Nusantara 5 serving the T-10 route from the Indonesia's 'Sea-Toll' program
+                    <a href="https://ppid.dephub.go.id/fileupload/informasi-berkala/20230512143919.SK_Jaringan_Trayek_Tol_Laut_TA._2023.pdf" target="_blank">[6]</a>
+                    is taken for the study. 
                     This route is one with the highest volume routes within this program. 
-                    It serves the eastern part of Indonesia, notably the Maluku group of islands. The detail of the route is presented in below table.
+                    It serves the eastern part of Indonesia, notably the North Maluku group of islands. The detail of the route is presented in below table.
                     <br>
                     <br>
 
-                    <!-- T-10 table -->
-                    {% include 'includes/equation_data.html' with table_port_distance_only=True %}
-                    
-                   
+                    <!-- T-10 map -->
+                    <span class="image">
+                        <img src="{% static 'assets/images/trayek t-10.png' %}" alt="" style="width: 100%; height: auto;">
+                    </span>
                     <br>
-                    
+                    <br>
+                    <!-- T-10 table -->
+                    {% include 'includes/equation_data.html' with table_port_distance_only=True %}                 
+                                     
                 </p>
 
                 <p>
@@ -71,7 +79,9 @@
                     focusing on reducing logistics costs and equalizing the price of goods across regions, particularly in remote and underdeveloped areas.                  
                     
                 </p>
+                <br>
 
+                <h3>Data & Methodology</h3>
                 <p>
                     Following table summarize the subject of the comparison.
                     <br>
@@ -125,10 +135,22 @@
                 </p>
 
                 <p>
-                    The rest of the assumptions can be summarized in the following table.
-                    {% include 'includes/equation_data.html' with table_assumptions_only=True %}
+                    As for the physical model, the volume and weight of the required energy will be compared. 
+                    For the ICE ship, the total fuel storage tank volume represents the required energy for the voyage, 
+                    whereas for the battery electric ship, it will use the volume and weight of the require battery system.  
+                    The rest of the assumptions can be summarized in the following table. 
                     The charging rate and fuel oil price are local data in IDR, it will be converted to EUR during the estimation.
-                    The resulting estimation is presented in below graph
+                    <!-- table for assumptions -->
+                    {% include 'includes/equation_data.html' with table_assumptions_only=True %}
+                    <br>
+                    <h3>Synthesis</h3>
+                    The resulting estimation is presented in below graph. 
+                    The Port of Arrival illustrates the voyage segment within T-10 route, for example 'Tidore' represents the voyage from Surabaya to Tidore,
+                    and 'Morotai' represents the voyage between Tidore to Morotai. 
+                    The intention to show this result is to illustrate the effect of segment distance and passage time to the economic model.
+                    The y-axis quantifies the total annual costs, 
+                    distinguishing between the annualized investment cost—depicted as the solid base of each bar—and the recurring refueling or charging costs, 
+                    shown as the upper stacked portion.  
 
                     <span class="image main" style="display: block; padding-bottom: 20px;">
                         {% include 'includes/annual_costs.html' %}</span>
@@ -136,7 +158,7 @@
                     
                 </p>
                 <p>
-                    The recent analysis of propulsion costs for cargo ships presents findings that are in line with prior research, 
+                    This analysis presents findings that are in line with the research by Kistner et al. (2023) <a href="https://doi.org/10.1016/j.ecmx.2023.100507" target="_blank">[1]</a>, 
                     particularly highlighting the economic challenges associated with the application of battery-electric propulsion systems for extended maritime routes. 
                     A case in point is the route from Surabaya to Tidore, covering a journey of approximately three days. 
                     For this passage, the annualized investment cost of implementing battery-electric propulsion is observed to be about 50 times higher than that of traditional marine diesel engines. 
@@ -147,21 +169,22 @@
                     Here, the annualized investment cost for electric propulsion is merely three times that of diesel engines - 
                     a significantly reduced gap compared to the longer T-10 route from Surabaya to Tidore. 
                     This observation opens up an intriguing line of inquiry into the viability of electric propulsion for mid-range maritime routes, 
-                    particularly those spanning 300 to 700 nautical miles, where economic and operational efficiency may reach a tipping point.
+                    particularly those spanning 300 to 700 nautical miles in the near future, where economic and operational efficiency may reach a tipping point.
+                    Adding a midway stop for the longest route might reduce a lot the investment cost, for example berthing at Makassar prior to continuing to Tidore.   
                 </p>
                 <!-- table -->
                 {% include 'includes/equation_data.html' with physical_model_table_only=True %} 
                 <p>
-                    From a physical modeling perspective, our analysis has honed in on the longest route within our study, 
+                    From a physical modeling perspective, this analysis used the longest route within our study, 
                     the 1216 nautical mile trek from Surabaya to Tidore. 
                     Findings indicate that battery-electric propulsion systems would require approximately threefold the volume and weight compared to conventional systems. 
                     Such an increase has direct implications on cargo capacity, potentially reducing available space and weight for freight. 
-                    Notably, even if batteries were to occupy the space typically reserved for fuel tanks, an additional 2000 m³ would still be necessary to house the electric system.
+                    Notably, even if batteries were to occupy the space typically reserved for fuel tanks, an additional 2000 m³ would still be necessary to house the battery-electric system.
                 </p>
                 <p>
-                    It is important to note that these calculations have not accounted for the environmental costs associated with each propulsion system, 
-                    nor the potential for price changes in battery technology. As the maritime industry continues to evolve and more data becomes available, 
-                    particularly regarding environmental impact and battery price trends, it is my intention to provide updated insights through future blog posts.
+                    It is important to note that these calculations have not accounted for the environmental costs associated mainly with the marine diesel engine, such as carbon tax, 
+                    nor the trend of price reduction in battery technology. 
+                    It will be interesting to observe how incorporating these factors might alter the economic feasibility of electric maritime propulsion system.
                 </p>
 
 <!-- 
@@ -198,14 +221,26 @@
                         <span class="italicized">IOP Conference Series: Earth and Environmental Science</span>, 571, 012078. 
                         <a href="https://doi.org/10.1088/1755-1315/571/1/012078" target="_blank">https://doi.org/10.1088/1755-1315/571/1/012078</a>
                     </li>
+                    <li class="apa-citation">
+                        <span class="italicized">Tarif Tenaga Listrik</span>. PLN. Retrieved from 
+                        <a href="https://web.pln.co.id/pelanggan/tarif-tenaga-listrik" target="_blank">https://web.pln.co.id/pelanggan/tarif-tenaga-listrik</a>
+                    </li>
+                    <li class="apa-citation">
+                        <span class="italicized">Harga Solar Industri B35 & MFO</span>. Solar Industri. Retrieved from 
+                        <a href="https://solarindustri.com/berita/harga-solar-industri-01-14-januari-2024/" target="_blank">https://solarindustri.com/berita/harga-solar-industri-01-14-januari-2024/</a>
+                    </li>
+                    <li class="apa-citation">
+                        <span class="italicized">Keputusan Direktur Jenderal Perhubungan Laut 
+                            Tentang Penetapan Jaringan Trayek Penyelenggaraan Kewajiban Pelayanan Publik Untuk Angkutan Barang Di Laut Tahun Anggaran 2023
+                        </span>. Dirjen Perhubungan Laut. Retrieved from 
+                        <a href="https://ppid.dephub.go.id/fileupload/informasi-berkala/20230512143919.SK_Jaringan_Trayek_Tol_Laut_TA._2023.pdf" target="_blank">https://ppid.dephub.go.id/fileupload/informasi-berkala/20230512143919.SK_Jaringan_Trayek_Tol_Laut_TA._2023.pdf</a>
+                    </li>
+                      
                 </ol>
     
             </div>
         </section>
     </div>
-
-
-
 
 
 
