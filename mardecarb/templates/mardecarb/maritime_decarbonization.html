@@ -1,6 +1,15 @@
 
 {% extends 'base.html' %}
 {% load static %}
+
+{% block meta %}
+  <meta property="og:title" content="Electrifying Maritime Transportation - talk with numbers">
+  <meta property="og:description" content="Exploring the viability and challenges of electrifying maritime transportation in Indonesia.">
+  <meta property="og:image" content="{% static 'assets/images/specific-image-for-article.jpg' %}">
+  <meta property="og:url" content="https://www.talkwithnumbers.com/mardecarb/">
+  <meta property="og:type" content="article">
+{% endblock %}
+
 {% block content %}
 <article>
     <div id="main" class="alt">

@@ -1,8 +1,17 @@
 <html>
 	{% load static %}
 	<head>
-		<title>TWN</title>
+		<title>Talk with Numbers</title>
 		<meta charset="utf-8">
+		
+		{% block meta %}
+		<meta property="og:title" content="talk with numbers">
+		<meta property="og:description" content="blog posts about climate change, energy, and decarbonization">
+		<meta property="og:image" content="{% static 'assets/images/electricvessel.jpg' %}">
+		<meta property="og:url" content="https://www.talkwithnumbers.com/">
+		<meta property="og:type" content="website">
+		{% endblock %}
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
